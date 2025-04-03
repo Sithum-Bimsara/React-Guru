@@ -1,11 +1,13 @@
 # Table of Contents
-[01.React_and_the_DOM](#React_and_the_DOM)
+[01.React_and_the_DOM](#01.React_and_the_DOM)
 
-[02.Creating_a_React_Application_with_Create_React_App](#Creating_a_React_Application_with_Create_React_App)
+[02.Creating_a_React_Application_with_Create_React_App](#02.Creating_a_React_Application_with_Create_React_App)
 
-[Hello_World_in_React](#Hello_World_in_React)
+[03.Hello_World_in_React](#03.Hello_World_in_React)
 
-# React_and_the_DOM 📖
+[04.JavaScript_Objects](#04.JavaScript_Objects)
+
+# 01.React_and_the_DOM 📖
 
 ## Introduction to React ⚛️
 React is a **JavaScript library** for building fast and interactive user interfaces. It was developed by **Facebook in 2011** and has become the most popular JavaScript library for UI development. As seen in **Google Trends**, React dominates over other frameworks like **Angular** and **Vue**.
@@ -99,7 +101,7 @@ React is a **powerful and efficient** library for building UI components. With c
 
 ---
 
-# 🚀 Creating_a_React_Application_with_Create_React_App
+# 🚀 02.Creating_a_React_Application_with_Create_React_App
 
 ## 📌 Setting Up the React App
 
@@ -225,7 +227,7 @@ So, it is easy to write JSX instead of writing plain react code like above.
 
 ---
 
-# Hello_World_in_React
+# 03.Hello_World_in_React
 
 ## 🚀 Setting Up a React Project from Scratch
 
@@ -340,7 +342,93 @@ This was a basic introduction to React rendering. In a real-world application:
 - Instead of rendering a single `h1` element, we will render a **component tree**.
 - The root component (`App.js`) will contain various child components like **Navbar, Sidebar, Profile, etc.**
 
-In the next section, we’ll dive into **React components** and how they work. Stay tuned! 🎯
+---
+
+# 📌 04.JavaScript_Objects
+
+## 🏗️ Defining an Object
+In JavaScript, objects are collections of **key-value pairs**. We can define an object using the `const` keyword:
+
+```javascript
+const person = {
+    name: "John",
+    walk: function() {
+        console.log("Walking...");
+    }
+};
+```
+
+Here, we have:
+- **`name`**: A property (key-value pair where the value is a string)
+- **`walk`**: A method (a function inside an object) 🏃‍♂️
+
+### 🎯 What is a Method?
+📌 In **Object-Oriented Programming (OOP)**, a function inside an object is called a **method**.
+
+## ✨ ES6 Method Syntax
+Starting from **ES6**, there's a cleaner way to define methods in objects. Instead of using `function`, we can write:
+
+```javascript
+const person = {
+    name: "John",
+    walk() {
+        console.log("Walking...");
+    },
+    talk() {
+        console.log("Talking...");
+    }
+};
+```
+
+🚀 **What’s different?**
+- No need for `:` (colon) or `function` keyword.
+- Methods are now more readable and concise!
+
+Now, our `person` object has:
+- **1 Property** (`name`) 🏷️
+- **2 Methods** (`walk` and `talk`) 🎙️
+
+## 🎯 Accessing Object Members
+There are **two ways** to access properties and methods in an object:
+
+### 1️⃣ Dot Notation (Most Common)
+```javascript
+person.talk(); // Talking...
+person.walk(); // Walking...
+console.log(person.name); // John
+```
+✅ Simple & readable
+
+### 2️⃣ Bracket Notation (Dynamic Access)
+```javascript
+person["walk"](); // Walking...
+console.log(person["name"]); // John
+```
+
+🛠️ **Why Use Bracket Notation?**
+Sometimes, we don’t know in advance what property or method we need to access. In such cases, **bracket notation** is useful.
+
+Example:
+```javascript
+const targetMember = "name";
+console.log(person[targetMember]); // John
+```
+🎯 This is helpful when working with **dynamic inputs**, like form fields!
+
+### 🔥 Changing Property Values
+```javascript
+person.name = "Mike";
+console.log(person.name); // Mike
+```
+
+📌 **When to Use Each Notation?**
+- If you **know** the property/method name ahead of time → Use **dot notation** ✅
+- If the property/method is **dynamic** → Use **bracket notation** 🔄
+
+---
+
+## ⏭️ Next: Understanding the `this` Keyword in JavaScript 🎭
+
 
 
 
