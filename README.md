@@ -4,7 +4,7 @@
 - [03.Hello_World_in_React](#Hello_World_in_React)
 - [04.JavaScript_Objects](#JavaScript_Objects)
 
-# React_and_the_DOM 📖
+# React_and_the_DOM 
 
 ## Introduction to React ⚛️
 React is a **JavaScript library** for building fast and interactive user interfaces. It was developed by **Facebook in 2011** and has become the most popular JavaScript library for UI development. As seen in **Google Trends**, React dominates over other frameworks like **Angular** and **Vue**.
@@ -98,7 +98,7 @@ React is a **powerful and efficient** library for building UI components. With c
 
 ---
 
-# 🚀 Creating_a_React_Application_with_Create_React_App
+# Creating_a_React_Application_with_Create_React_App
 
 ## 📌 Setting Up the React App
 
@@ -341,7 +341,7 @@ This was a basic introduction to React rendering. In a real-world application:
 
 ---
 
-# 📌 JavaScript_Objects
+# JavaScript_Objects
 
 ## 🏗️ Defining an Object
 In JavaScript, objects are collections of **key-value pairs**. We can define an object using the `const` keyword:
