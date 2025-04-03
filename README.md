@@ -1,6 +1,9 @@
 # Table of Contents
 [01.React_and_the_DOM](#React_and_the_DOM)
+
 [02.Creating_a_React_Application_with_Create_React_App](#Creating_a_React_Application_with_Create_React_App)
+
+[Hello_World_in_React](#Hello_World_in_React)
 
 # React_and_the_DOM 📖
 
@@ -220,5 +223,124 @@ So, it is easy to write JSX instead of writing plain react code like above.
 
 ## 🎯 Conclusion
 
-We now have a fully functional React app! 🎉 Next, we will dive into writing React components from scratch. Stay tuned! 🔥
+---
+
+# Hello_World_in_React
+
+## 🚀 Setting Up a React Project from Scratch
+
+In this guide, we will delete all files inside the `src` folder and start fresh with a new `index.js` file. We will import necessary modules, define a React element, and render it inside the DOM. Let's get started! 🎉
+
+---
+
+## 🛠️ Importing React and ReactDOM
+
+In modern JavaScript (ES6+), we use modules to import functionalities from different files. Here, we need to import `React` and `ReactDOM`:
+
+```javascript
+import React from "react";
+import ReactDOM from "react-dom/client";
+```
+
+- `React` is the core library that allows us to create UI components.
+- `ReactDOM` is used to render our components into the actual DOM.
+
+---
+
+## ✨ Creating a React Element
+
+Now, let's create a simple React element:
+
+```javascript
+const element = <h1>Hello World</h1>;
+```
+
+- This is JSX (JavaScript XML), a syntax that looks like HTML but compiles to JavaScript.
+- Babel, a JavaScript compiler, converts this JSX code into a function call to `React.createElement()`.
+
+Why do we need to import React even though we don’t directly use it?
+- JSX gets compiled into `React.createElement()`, so React must be in scope.
+
+To confirm this, let's log the element:
+
+```javascript
+console.log(element);
+```
+
+### 🔍 Understanding JSX Compilation
+The above JSX code:
+
+```javascript
+const element = <h1>Hello World</h1>;
+```
+
+compiles down to:
+
+```javascript
+const element = React.createElement("h1", null, "Hello World");
+```
+
+This is why we must import `React` at the top.
+
+---
+
+## 🖥️ Rendering the Element to the DOM
+
+We need to render our React element inside the root div in `index.html`. Here’s how:
+
+```javascript
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(element);
+```
+
+### 🔍 Breakdown of the Code
+- `document.getElementById("root")` selects the `<div id="root"></div>` element in `index.html`.
+- `ReactDOM.createRoot(...)` creates a root for rendering React components.
+- `root.render(element)` renders our React element inside the selected DOM element.
+
+After saving the file, check the browser. You should see:
+
+```
+Hello World
+```
+
+🔥 Congratulations! You've successfully rendered your first React element! 🎉
+
+---
+
+## 🌐 Understanding Virtual DOM
+
+React uses a **Virtual DOM** to optimize UI updates.
+- The `element` we logged earlier is not an actual DOM element but a **React Element**.
+- This React Element is a lightweight representation of the actual DOM node.
+- React compares the new virtual DOM with the previous one and updates only the changed parts.
+
+Example:
+1️⃣ Initial render → `h1` added to the DOM.
+2️⃣ Update `h1` text → Only text content changes, not the entire element.
+
+---
+
+## 🔥 Hot Module Reloading (HMR)
+
+Projects created with **Create React App** support Hot Module Reloading (HMR):
+- Whenever you save changes, the app **automatically reloads**.
+- No need to refresh the browser manually.
+
+Try it:
+1️⃣ Change `Hello World` to `Hello React!` in `index.js`.
+2️⃣ Save the file.
+3️⃣ The browser updates automatically! 🚀
+
+---
+
+## 🎯 What's Next?
+
+This was a basic introduction to React rendering. In a real-world application:
+- Instead of rendering a single `h1` element, we will render a **component tree**.
+- The root component (`App.js`) will contain various child components like **Navbar, Sidebar, Profile, etc.**
+
+In the next section, we’ll dive into **React components** and how they work. Stay tuned! 🎯
+
+
 
