@@ -333,13 +333,6 @@ Try it:
 2️⃣ Save the file.
 3️⃣ The browser updates automatically! 🚀
 
----
-
-## 🎯 What's Next?
-
-This was a basic introduction to React rendering. In a real-world application:
-- Instead of rendering a single `h1` element, we will render a **component tree**.
-- The root component (`App.js`) will contain various child components like **Navbar, Sidebar, Profile, etc.**
 
 ---
 
@@ -519,7 +512,7 @@ Understanding `this` in JavaScript is crucial for writing effective code. Always
 
 ---
 
-# 📖 Understanding_this_and_the_bind_Method
+# Understanding_this_and_the_bind_Method
 
 ## 🔹 Recap from the Last Lecture
 
