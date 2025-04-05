@@ -3,6 +3,7 @@
 - [02.Creating_a_React_Application_with_Create_React_App](#Creating_a_React_Application_with_Create_React_App)
 - [03.Hello_World_in_React](#Hello_World_in_React)
 - [04.JavaScript_Objects](#JavaScript_Objects)
+- [05.Understanding_the_this_Keyword_in_JavaScript](#Understanding_the_this_Keyword_in_JavaScript)
 
 # React_and_the_DOM 
 
@@ -424,7 +425,98 @@ console.log(person.name); // Mike
 
 ---
 
-## ⏭️ Next: Understanding the `this` Keyword in JavaScript 🎭
+# Understanding_the_this_Keyword_in_JavaScript
+
+## Introduction 📌
+The `this` keyword in JavaScript is one of the most confusing concepts for developers, especially for those coming from languages like C# or Java. Unlike those languages, where `this` always refers to the current object, JavaScript behaves differently depending on how a function is called.
+
+---
+
+## Example: The `walk` Method 👣
+
+Let's consider a `person` object with a `walk` method:
+
+```javascript
+const person = {
+    walk() {
+        console.log(this);
+    }
+};
+```
+
+Now, when we call `person.walk()`:
+
+```javascript
+person.walk();
+```
+
+### Output 📤
+We see our `person` object logged in the console. ✅
+
+**Why?** Because when a function is called as a method of an object, `this` refers to that object.
+
+---
+
+## What Happens When We Assign `walk` to a Constant? 🤔
+
+Let's define a constant and assign it the `walk` method:
+
+```javascript
+const walk = person.walk;
+console.log(walk);
+```
+
+### Output 📤
+It logs the function definition to the console. ✅
+
+Now, let's call the `walk` function:
+
+```javascript
+walk();
+```
+
+### Unexpected Output ❌
+Instead of logging the `person` object, we get `undefined`. 😲
+
+---
+
+## Why Does `this` Become `undefined`? 🤯
+
+🔹 The value of `this` is determined by **how** a function is called.
+
+🔹 When a function is called as an **object method**, `this` refers to the object.
+
+🔹 When a function is called **standalone (outside an object(`person`))**, `this` refers to the **global object** (i.e., `window` in browsers).
+
+🔹 However, in this React project, `strict mode` is enabled by default. 
+
+### What is Strict Mode? 🔒
+Strict mode enforces better coding practices by preventing the accidental use of the global object. In strict mode:
+
+- Instead of referencing `window`, `this` is set to `undefined` when calling a function standalone.
+- This helps avoid unintended errors and makes JavaScript code safer.
+
+---
+
+## Key Takeaways 📝
+✅ `this` inside an **object method** → Refers to the object itself.
+
+✅ `this` inside a **standalone function** → Refers to `window` (unless in strict mode, where it is `undefined`).
+
+✅ `strict mode` prevents accidental access to `window`, making JavaScript safer.
+
+---
+
+## Conclusion 🎯
+Understanding `this` in JavaScript is crucial for writing effective code. Always remember:
+
+🚀 **How** you call a function determines `this`.
+
+🔍 In **strict mode**, `this` is `undefined` for standalone functions.
+
+🛠️ Use `.bind()`, `call()`, or `apply()` to explicitly set `this` when necessary.
+
+
 
 
 
