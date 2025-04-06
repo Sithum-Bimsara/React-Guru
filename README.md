@@ -560,6 +560,57 @@ Now, when we call the `walk` function, it correctly prints the `person` object t
 
 Now you understand how `bind` works and how it helps us control `this` in JavaScript! 🚀🔥
 
+---
+
+# Understanding_this_and the_bind_Method
+
+## 🔹 Recap from the Last Lecture
+
+In the last lecture, you learned that when we call a function as a standalone function (outside of an object), the value of `this`:
+- 🏠 Defaults to the **global object** (`window` in browsers) 🌍.
+- ❗ If **strict mode** (`'use strict'`) is enabled, `this` returns `undefined` 🚫.
+
+## 🔹 Fixing the `this` Problem
+
+In this lecture, we will learn how to **fix** this issue so that no matter how we call the `walk` function, `this` will always reference the `person` object 👤.
+
+### ✅ JavaScript Functions Are Objects
+One new thing to note is that **functions in JavaScript are objects** 📦. 
+- `person.walk` is actually an **object**.
+- Don't believe it? Let's check:
+  ```js
+  console.log(person.walk);
+  ```
+- When we log this function, we can see that it has **multiple members** (properties and methods) 🔍.
+- One of these methods is **`bind`**, which helps us solve our problem ✅.
+
+## 🔹 The `bind` Method 🏷️
+### How Does `bind` Work?
+The `bind` method **attaches** a function to an object permanently.
+
+```js
+const walk = person.walk.bind(person);
+walk();
+```
+
+### 🧐 Breaking It Down:
+- `bind` **creates a new function** where `this` always refers to the `person` object.
+- The **first argument** to `bind` determines the value of `this`.
+- Since we pass `person` as an argument, the returned function **always references** `person` 🎯.
+
+### ✅ Fixing Our Issue
+Now, when we call the `walk` function, it correctly prints the `person` object to the console 🎉.
+
+## 🔹 Quick Recap 📌
+- 🏗️ **Functions in JavaScript are objects**.
+- 🎭 **They have properties and methods**.
+- 🔗 The **`bind` method** permanently binds `this` to a specific object.
+- 📌 **Using `bind`, we ensure that `this` inside a function always refers to the expected object**.
+- 🚀 `bind` is widely used in **React applications** to manage function references.
+
+Now you understand how `bind` works and how it helps us control `this` in JavaScript! 🚀🔥
+
+
 
 
 
