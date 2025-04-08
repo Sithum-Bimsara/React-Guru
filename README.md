@@ -5,6 +5,7 @@
 - [04.JavaScript_Objects](#JavaScript_Objects)
 - [05.Understanding_the_this_Keyword_in_JavaScript](#Understanding_the_this_Keyword_in_JavaScript)
 - [06.Understanding_this_and_the_bind_Method](#Understanding_this_and_the_bind_Method)
+- [07.JavaScript_Arrow_Functions](#JavaScript_Arrow_Functions)
 
 # React_and_the_DOM 
 
@@ -609,6 +610,78 @@ Now, when we call the `walk` function, it correctly prints the `person` object t
 - 🚀 `bind` is widely used in **React applications** to manage function references.
 
 Now you understand how `bind` works and how it helps us control `this` in JavaScript! 🚀🔥
+
+---
+# JavaScript_Arrow_Functions 
+
+## 🎯 Introduction
+JavaScript **Arrow Functions** provide a more concise way to write functions. They are especially useful in **callbacks, array methods**, and function expressions.
+
+---
+
+## 🔹 Syntax of an Arrow Function
+
+### ✅ Traditional Function
+```js
+const squareNumber = function(number) {
+    return number * number;
+};
+```
+
+### ⚡ Arrow Function Equivalent
+```js
+const square = number => number * number;
+console.log(square(2)); // 4
+```
+
+### 🔥 Key Differences:
+- **No need for the `function` keyword**
+- **Implicit return** if the function body contains a single expression
+- **Shorter syntax** 📝
+
+---
+
+## 🌟 Example Usage
+### 🏗️ Filtering Active Jobs
+
+#### ✅ Using Traditional Function
+```js
+const jobs = [
+    { id: 1, isActive: true },
+    { id: 2, isActive: false },
+    { id: 3, isActive: true }
+];
+
+const activeJobs = jobs.filter(function(job) {
+    return job.isActive;
+});
+```
+
+#### ⚡ Using Arrow Function
+```js
+const activeJobs = jobs.filter(job => job.isActive);
+console.log(activeJobs); // [{ id:1, isActive: true }, { id:3, isActive: true }]
+```
+
+---
+
+## 🎯 Advantages of Arrow Functions
+✔️ **Concise Syntax** - Less boilerplate code 📌
+✔️ **Implicit Return** - No need for `return` in single-expression functions 🎯
+✔️ **Lexical `this`** - Arrow functions do not bind their own `this` context 🔥
+
+---
+
+## 🛑 Things to Keep in Mind
+❌ Cannot be used as **constructors** (No `new` keyword usage)
+❌ Do not have their own **`this`**, **`arguments`**, or **`super`**
+❌ Not suitable for methods that require their own `this`
+
+---
+
+## 🎉 Conclusion
+Arrow functions make JavaScript more **modern**, **readable**, and **efficient**. They are great for **callbacks, array operations, and functional programming**. 🚀
+
 
 
 
