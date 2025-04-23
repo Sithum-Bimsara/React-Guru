@@ -8,6 +8,7 @@
 - [07.JavaScript_Arrow_Functions](#JavaScript_Arrow_Functions)
 - [08.Understanding_Arrow_Functions_in_JavaScript](#Understanding_Arrow_Functions_in_JavaScript)
 - [09.JavaScript_map_Method_with_Arrow_Functions](#JavaScript_map_Method_with_Arrow_Functions)
+- [10.JavaScript_Object_Destructuring](#JavaScript_Object_Destructuring)
 
 # React_and_the_DOM 
 
@@ -846,9 +847,72 @@ console.log(items);
 
 ---
 
-## 🎉 Conclusion
-The **`map()` method** combined with **Arrow Functions** is a powerful way to transform arrays in JavaScript. It makes code more readable, efficient, and modern. 🚀
 
+# JavaScript_Object_Destructuring
+
+## 🎯 Introduction
+Object **destructuring** in JavaScript allows us to **extract values** from objects into separate variables in a clean and concise way. It reduces redundancy and improves readability. 📌
+
+---
+
+## 🔹 Typical Way of Accessing Object Properties
+```js
+const address = {
+    street: "123 Main St",
+    city: "Kurunagala",
+    country: "Sri Lanka"
+};
+
+const street = address.street;
+const city = address.city;
+const country = address.country;
+```
+
+### 🛑 Issues with this Approach:
+❌ **Repetitive** usage of `address.property`
+❌ **Verbose** code
+❌ **Hard to maintain** when adding/removing properties
+
+---
+
+## 🔥 Using Object Destructuring
+### ✅ Destructuring Assignment
+```js
+const { street, city, country } = address; 
+console.log(street);  // Output: 123 Main St
+console.log(country); // Output: Sri Lanka
+```
+✔️ **Less repetitive**
+✔️ **Cleaner syntax**
+✔️ **Improves readability**
+
+---
+
+## 🎯 Extracting a Single Property
+You can also extract **only one property**:
+```js
+const { city } = address; 
+console.log(city);  // Output: Kurunagala
+```
+
+---
+
+## 🎭 Renaming Variables with Aliases
+You can rename variables while destructuring:
+```js
+const { street: st, country: cn } = address;
+console.log(st); // Output: 123 Main St
+console.log(cn); // Output: Sri Lanka
+```
+✔️ **Avoids naming conflicts**
+✔️ **Improves clarity in larger projects**
+
+---
+
+## 🎉 Conclusion
+Object **destructuring** is a powerful JavaScript feature that enhances **code readability, efficiency, and maintainability**. It reduces redundancy and makes it easier to work with objects. 🚀
+
+---
 
 
 
